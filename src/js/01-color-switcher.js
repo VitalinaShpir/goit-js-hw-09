@@ -14,8 +14,8 @@ function startColorChange() {
 
 function stopColorChange() {
   clearInterval(intervalId);
-  startButton.disabled = false;
   stopButton.disabled = true;
+  startButton.disabled = false;
 }
 
 function changeBackgroundColor() {
