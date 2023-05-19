@@ -27,10 +27,10 @@ const options = {
         const ms = selectedDate.getTime() - currentDate.getTime();
         const convertedMs = convertMs(ms);
 
-        secTime.textContent = convertedMs.seconds;
-        minTime.textContent = convertedMs.minutes;
-        hourTime.textContent = convertedMs.hours;
-        dayTime.textContent = convertedMs.days;}
+        secTime.textContent = addLeadingZero(convertedMs.seconds);
+        minTime.textContent = addLeadingZero(convertedMs.minutes);
+        hourTime.textContent = addLeadingZero(convertedMs.hours);
+        dayTime.textContent = addLeadingZero(convertedMs.days);}
 
         else{
           clearInterval(timer);
@@ -40,6 +40,10 @@ const options = {
 
   },
 };
+
+function addLeadingZero(value) {
+  return value.toString().padStart(2, '0')
+}
 
 
 function convertMs(ms) {
