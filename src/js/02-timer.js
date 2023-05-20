@@ -3,13 +3,14 @@ import flatpickr from 'flatpickr';
 
 import 'flatpickr/dist/flatpickr.min.css';
 
+Notiflix.Notify.init({ position: 'center-top' });
+
 const startButton = document.querySelector('button[data-start]');
 
 const secTime = document.querySelector('span[data-seconds]');
 const minTime = document.querySelector('span[data-minutes]');
 const hourTime = document.querySelector('span[data-hours]');
 const dayTime = document.querySelector('span[data-days]');
-// console.log(inputTimePicker);
 
 const options = {
   enableTime: true,
