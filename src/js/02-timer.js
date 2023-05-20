@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 
 import 'flatpickr/dist/flatpickr.min.css';
 
-Notiflix.Notify.init({ position: 'center-top' });
+Notiflix.Notify.init({ position: 'center-center' });
 
 const startButton = document.querySelector('button[data-start]');
 

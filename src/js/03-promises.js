@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
 
-Notiflix.Notify.init({ position: 'center-top' });
+Notiflix.Notify.init({ position: 'center-center' });
 
 const formItem = document.querySelector('.form');
 const delayItem = document.querySelector('[name="delay"]');
