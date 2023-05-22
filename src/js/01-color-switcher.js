@@ -4,6 +4,8 @@ const stopButton = document.querySelector('button[data-stop]');
 startButton.addEventListener('click', startColorChange);
 stopButton.addEventListener('click', stopColorChange);
 
+stopButton.setAttribute("disabled", "");
+
 let intervalId;
 
 function startColorChange() {
@@ -28,5 +30,5 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-// console.log(startButton);
-// console.log(stopButton);
+
+
