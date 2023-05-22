@@ -47,4 +47,4 @@ function handleSubmit(event) {
   }
 }
 
-console.log('hello');
+

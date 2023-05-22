@@ -6,11 +6,13 @@ import 'flatpickr/dist/flatpickr.min.css';
 Notiflix.Notify.init({ position: 'center-center' });
 
 const startButton = document.querySelector('button[data-start]');
+startButton.disabled = true;
 
 const secTime = document.querySelector('span[data-seconds]');
 const minTime = document.querySelector('span[data-minutes]');
 const hourTime = document.querySelector('span[data-hours]');
 const dayTime = document.querySelector('span[data-days]');
+
 
 const options = {
   enableTime: true,
@@ -27,6 +29,8 @@ const options = {
         if (selectedDate > currentDate) {
         const ms = selectedDate.getTime() - currentDate.getTime();
         const convertedMs = convertMs(ms);
+
+        startButton.disabled = false;
     
         secTime.textContent = addLeadingZero(convertedMs.seconds);
         minTime.textContent = addLeadingZero(convertedMs.minutes);
@@ -35,6 +39,7 @@ const options = {
 
         else{
           clearInterval(timer);
+          startButton.disabled = true;
           return Notiflix.Notify.failure('Please choose a date in the future');
         }
       }, 1000);
