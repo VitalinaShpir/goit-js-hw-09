@@ -36,9 +36,15 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 function startTimer() {
-  setInterval(() => {
+  timerId = setInterval(() => {
     currentDate = new Date();
     const ms = selectedDate.getTime() - currentDate.getTime();
+
+    if (selectedDate.getTime() <= currentDate.getTime()) {
+      clearInterval(timerId);
+      return;
+    }
+
     const convertedMs = convertMs(ms);
 
     startButton.disabled = true;
@@ -49,6 +55,7 @@ function startTimer() {
     hourTime.textContent = addLeadingZero(convertedMs.hours);
     dayTime.textContent = addLeadingZero(convertedMs.days);
   }, 1000);
+
 }
 
 function convertMs(ms) {
