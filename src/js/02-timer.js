@@ -36,7 +36,7 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 function startTimer() {
-  timerId = setInterval(() => {
+  let timerId = setInterval(() => {
     currentDate = new Date();
     const ms = selectedDate.getTime() - currentDate.getTime();
 
